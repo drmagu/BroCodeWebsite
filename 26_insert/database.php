@@ -8,15 +8,22 @@ $db_pass = "";
 $db_name = "businessdb";
 $conn = "";
 
-try {
-    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-}
-catch (mysqli_sql_exception) {
-    echo 'could not connect! <br />';
-
+global $conn;
+function connect($db_server, $db_user, $db_pass, $db_name){
+    try {
+        $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+        return $conn;
+    }
+    catch (mysqli_sql_exception) {
+        echo 'could not connect! <br />';
+    
+    }
+    return $conn;
 }
 
 // test
+$conn = connect($db_server, $db_user, $db_pass, $db_name);
 if($conn) {
     echo'conection established <br />';
+    var_dump($conn); br();
 }

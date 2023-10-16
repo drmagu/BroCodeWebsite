@@ -8,7 +8,10 @@ function br() {
 
 include('./database.php');
 
-$username = "Patrick";
+// global $conn;
+// var_dump($conn); br();
+
+$username = "Patricia";
 $password = "rock3";
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
