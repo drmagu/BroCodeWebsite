@@ -6,9 +6,8 @@ $db_server = "localhost";
 $db_user = "root";
 $db_pass = "";
 $db_name = "businessdb";
-// $conn = "";
+$conn = "";
 
-// global $conn;
 function connect($db_server, $db_user, $db_pass, $db_name){
     try {
         $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
@@ -25,5 +24,4 @@ function connect($db_server, $db_user, $db_pass, $db_name){
 $conn = connect($db_server, $db_user, $db_pass, $db_name);
 if($conn) {
     echo'conection established <br />';
-    var_dump($conn); br();
 }

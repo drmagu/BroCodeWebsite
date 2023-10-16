@@ -8,11 +8,8 @@ function br() {
 
 include('./database.php');
 
-// global $conn;
-// var_dump($conn); br();
-
-$username = "Patricia";
-$password = "rock3";
+$username = "DrMagu";
+$password = "amida0123";
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO users (user, password)
