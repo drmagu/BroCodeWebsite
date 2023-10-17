@@ -4,7 +4,7 @@
 
 The video is meant for beginners and covers procedural PHP exclusively.  
 
-All code was developed using VSCODE adn locally tested with XAMPP.  
+All code was developed using VSCODE and locally tested with XAMPP.  
 
 This repo illustrates a limited set of the chapters in the video.  
 
