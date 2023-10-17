@@ -14,29 +14,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-
-    // $sql = "SELECT * FROM users WHERE user = '$username' AND password = '$password'";
-    // $sql = "SELECT * FROM users WHERE user = '$username' AND password = $hash";
-    $sql = "SELECT * FROM users WHERE user = '$username'";
     
-    echo '\$hash: ' . $hash; br();
-    echo $sql; br();br();
+    $sql = "SELECT * FROM users WHERE user = '$username'";
+    // echo $sql; br();br();
 
     $result = mysqli_query($conn, $sql);
-    var_dump($result);
+    // var_dump($result); br();
     if(mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        var_dump($row); br();
-    
-        $_SESSION['username'] = $_POST['username'];
-        header("Location: home.php");
+        // var_dump($row); br();
+
+        // verify password
+        $storedHash = $row['password'];
+        // echo $storedHash; br();
+        if (password_verify($password, $storedHash)) {
+            echo 'password OK'; br();
+            $_SESSION['username'] = $_POST['username'];
+            header("Location: home.php");
+        } else {
+            echo '<h4>User name or password incorrect</h4>';
+            echo '<a href="./login_form.php">Continue...</a>';
+        }
     } else {
         echo '<h4>User name or password incorrect</h4>';
         echo '<a href="./login_form.php">Continue...</a>';
     }
-
 } else {
+    // was a get request
     header("Location: index.php");
 }
 
