@@ -4,6 +4,8 @@
 
 The video is meant for beginners and covers procedural PHP exclusively.  
 
+All code was developed using VSCODE adn locally tested with XAMPP.  
+
 This repo illustrates a limited set of the chapters in the video.  
 
 * 21: the $_SESSION super global
@@ -13,4 +15,14 @@ This repo illustrates a limited set of the chapters in the video.
 * 25: MySQL database - create table
 * 26: MySQL insert
 * 27: MySQL queries
-* 28: registration form project
+
+Instead of doing chaper 28, which deals with creating a registration form, we did a complete website called Fakebook.  
+* index.php
+* registration_form.php
+* register.php
+* login_form.php
+* login.php
+* home.php
+
+To handle any 404, we redirect to index.php which also logs the user out.  
+
