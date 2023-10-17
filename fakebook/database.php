@@ -21,6 +21,6 @@ function connect($db_server, $db_user, $db_pass, $db_name){
 
 // test
 $conn = connect($db_server, $db_user, $db_pass, $db_name);
-if($conn) {
-    echo'conection established <br /><br />';
-}
+// if($conn) {
+//     echo'conection established <br />';
+// }

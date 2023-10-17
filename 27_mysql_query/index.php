@@ -7,11 +7,10 @@ function br() {
 }
 
 include('./database.php');
-?>
 
-<?php
 // pick one user
 $sql = "SELECT * FROM users WHERE user = 'Patrick'";
+echo $sql; br();
 $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0) {
@@ -21,11 +20,10 @@ if(mysqli_num_rows($result) > 0) {
     echo  'No results from query'; br();
 }
 br();
-?>
 
-<?php
 // pick all users
 $sql = "SELECT * FROM users";
+echo $sql; br();
 $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0) {
@@ -38,7 +36,5 @@ if(mysqli_num_rows($result) > 0) {
     echo  'No results from query'; br();
 }
 br();
-?>
 
-<?php
 mysqli_close($conn);

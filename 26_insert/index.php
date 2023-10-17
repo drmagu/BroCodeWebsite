@@ -14,6 +14,7 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO users (user, password)
         VALUES ('$username', '$hash')";
+echo $sql; br();
 try {
     mysqli_query($conn, $sql);
     echo "user is registered"; br();
