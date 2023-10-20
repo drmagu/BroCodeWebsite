@@ -18,9 +18,8 @@ This repo illustrates a limited set of the chapters in the video.
 
 Instead of doing chaper 28, which deals with creating a registration form, we did a complete website called Fakebook.  
 * index.php
-* registration_form.php
+* login_register_form.php
 * register.php
-* login_form.php
 * login.php
 * home.php
 
