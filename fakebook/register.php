@@ -2,28 +2,21 @@
 
 declare(strict_types=1);
 
-function br() {
-    echo '<br />';
-}
+// function br() {
+//     echo '<br />';
+// }
 
-session_start();
+// session_start();
 
-include('./database.php');
+include_once('./database.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // echo "Trying to register "; 
-    // echo "'" . $_POST["username"] . "'"; br();
+    
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    if ($username == '') {
-        echo 'username can not be empty'; br();
-        echo "<a href = './index.php'>Continue..</a>"; br();
-        return;
-    }
-
-    if ($password == '') {
-        echo 'password can not be empty'; br();
+    if ($username == '' or $password == '') {
+        echo 'username or password can not be empty'; br();
         echo "<a href = './index.php'>Continue..</a>"; br();
         return;
     }
@@ -33,10 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO users (user, password)
             VALUES ('$username', '$hash')";
 
-    // $sql = "INSERT INTO users (user, password)
-    //          VALUES ('$username', '$password')";
-    
-    // echo $sql; br();
     try {
         mysqli_query($conn, $sql);
         echo "$username is now registered"; br();
@@ -48,9 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     catch(mysqli_sql_exception) {
         echo "Could not register username <strong>$username</strong>."; br();
         echo "Username <strong>$username</strong> is in use"; br();
-        echo "<a href='register_form.php'>Register</a>"; br(); 
+        echo "<a href='login_register_form.php'>Continue..</a>"; br(); 
     }
 } else {
+    // was a get request
     header("Location: index.php");
 }
 

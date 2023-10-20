@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-function br() {
-    echo '<br />';
-}
+// function br() {
+//     echo '<br />';
+// }
 
-session_start();
+// session_start();
 
-include('./database.php');
+include_once('./database.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
@@ -33,11 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: home.php");
         } else {
             echo '<h4>User name or password incorrect</h4>';
-            echo '<a href="./login_form.php">Continue...</a>';
+            echo '<a href="./login_register_form.php">Continue...</a>';
         }
     } else {
         echo '<h4>User name or password incorrect</h4>';
-        echo '<a href="./login_form.php">Continue...</a>';
+        echo '<a href="./login_register_form.php">Continue...</a>';
     }
 } else {
     // was a get request
