@@ -26,8 +26,6 @@ session_start();
 </body>
 </html>
 <?php
-    // $_SESSION['username'] = 'DrMagu';
-    // $_SESSION['passsword'] = 'amida';
     if (isset($_POST['login'])) {
         if (!empty($_POST['username']) && !empty($_POST['password'])) {
             $_SESSION['username'] = $_POST['username'];

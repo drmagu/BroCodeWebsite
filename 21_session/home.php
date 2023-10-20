@@ -30,8 +30,3 @@ session_start();
         session_destroy();
         header("Location: index.php");
     }
-
-
-// echo '<hr />';
-// echo $_SESSION['username']; br(); 
-// echo $_SESSION['password']; br();

@@ -37,12 +37,8 @@ include_once('./database.php');
     br();
     // var_dump( $_POST); br();
     if ($_POST['submit'] == 'Login') {
-        // echo 'you want to login'; br();
-        // header("Location: login.php");
         include_once(__DIR__ . '/login.php');
     } else if ($_POST['submit'] == 'Register'){
-        // echo 'you want to register'; br();
-        // header("Location: register.php");
         include_once(__DIR__ . '/register.php');
     } else {
         echo 'huh ???' ; br();
