@@ -25,4 +25,3 @@ Instead of doing chaper 28, which deals with creating a registration form, we di
 * home.php
 
 To handle any 404, we redirect to index.php which also logs the user out.  
-
