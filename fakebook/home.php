@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
+session_start();
+
 function br() {
     echo '<br />';
 }
-
-session_start();
 
 if (! $_SESSION['username']) {
     header("Location: index.php");
@@ -31,6 +31,7 @@ if (! $_SESSION['username']) {
     if (isset($_POST['logout'])) {
         session_destroy();
         header("Location: index.php");
+        exit;
     }
     ?>
 

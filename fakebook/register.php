@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $_POST['username'];
         }
         header("Location: home.php");
+        exit;
     } 
     catch(mysqli_sql_exception) {
         echo "Could not register username <strong>$username</strong>."; br();
@@ -42,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     // was a get request
     header("Location: index.php");
+    exit;
 }
 
 mysqli_close($conn);

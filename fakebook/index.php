@@ -12,8 +12,3 @@
     <p>Of course you may have to <a href="./login_register_form.php"><strong>Register</strong></a> first :).</p>
 </body>
 </html>
-
-<?php
-session_start();
-session_destroy();
-

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
+session_start();
+
 function br() {
     echo '<br />';
 }
-
-session_start();
 
 include_once('./database.php');
 ?>

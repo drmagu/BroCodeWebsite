@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     // was a get request
     header("Location: index.php");
+    exit;
 }
 
 mysqli_close($conn);
